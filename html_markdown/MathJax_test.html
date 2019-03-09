@@ -15,6 +15,76 @@
   $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
   $$\int x^2 \, dx = \frac{x^3}3 +C$$
   $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+  To see how any formula was written in any question or answer, including this one, right-click on the expression it and choose "Show Math As > TeX Commands". (When you do this, the '$' will not display. Make sure you add these. See the next point.)
+
+For inline formulas, enclose the formula in $...$. For displayed formulas, use $$...$$.
+These render differently. For example, type
+$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
+to show ∑ni=0i2=(n2+n)(2n+1)6 (which is inline mode) or type
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+to show
+∑i=0ni2=(n2+n)(2n+1)6
+(which is display mode).
+
+For Greek letters, use \alpha, \beta, …, \omega: α,β,…ω. For uppercase, use \Gamma, \Delta, …, \Omega: Γ,Δ,…,Ω.
+
+For superscripts and subscripts, use ^ and _. For example, x_i^2: x2i, \log_2 x: log2x.
+
+Groups. Superscripts, subscripts, and other operations apply only to the next “group”. A “group” is either a single symbol, or any formula surrounded by curly braces {…}. If you do 10^10, you will get a surprise: 1010. But 10^{10} gives what you probably wanted: 1010. Use curly braces to delimit a formula to which a superscript or subscript applies: x^5^6 is an error; {x^y}^z is xyz, and x^{y^z} is xyz. Observe the difference between x_i^2 x2i and x_{i^2} xi2.
+
+Parentheses Ordinary symbols ()[] make parentheses and brackets (2+3)[4+4]. Use \{ and \} for curly braces {}.
+
+These do not scale with the formula in between, so if you write (\frac{\sqrt x}{y^3}) the parentheses will be too small: (x√y3). Using \left(…\right) will make the sizes adjust automatically to the formula they enclose: \left(\frac{\sqrt x}{y^3}\right) is (x√y3).
+
+\left and\right apply to all the following sorts of parentheses: ( and ) (x), [ and ] [x],  \{ and \} {x}, | |x|, \vert |x|, \Vert ∥x∥, \langle and \rangle ⟨x⟩,  \lceil and \rceil ⌈x⌉, and \lfloor and \rfloor ⌊x⌋. \middle can be used to add additional dividers. There are also invisible parentheses, denoted by .: \left.\frac12\right\rbrace is 12}.
+
+If manual size adjustments are required: \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) gives (((((x))))).
+
+Sums and integrals \sum and \int; the subscript is the lower limit and the superscript is the upper limit, so for example \sum_1^n ∑n1. Don't forget {…} if the limits are more than a single symbol. For example, \sum_{i=0}^\infty i^2 is ∑∞i=0i2. Similarly, \prod ∏, \int ∫, \bigcup ⋃, \bigcap ⋂, \iint ∬, \iiint ∭, \idotsint ∫⋯∫.
+
+Fractions There are three ways to make these. \frac ab applies to the next two groups, and produces ab; for more complicated numerators and denominators use {…}: \frac{a+1}{b+1} is a+1b+1. If the numerator and denominator are complicated, you may prefer \over, which splits up the group that it is in: {a+1\over b+1} is a+1b+1. Using \cfrac{a}{b} command is useful for continued fractions ab, more details for which are given in this sub-article.
+
+Fonts
+
+Use \mathbb or \Bbb for "blackboard bold": CHNQRZ.
+Use \mathbf for boldface: ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.
+Use \mathit for italics: ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.
+Use \pmb for boldfaced italics: ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz.
+Use \mathtt for "typewriter" font: ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.
+Use \mathrm for roman font: ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.
+Use \mathsf for sans-serif font: ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.
+Use \mathcal for "calligraphic" letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Use \mathscr for script letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Use \mathfrak for "Fraktur" (old German style) letters: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.
+Radical signs Use sqrt, which adjusts to the size of its argument: \sqrt{x^3} x3−−√; \sqrt[3]{\frac xy} xy−−√3. For complicated expressions, consider using {...}^{1/2} instead.
+
+Some special functions such as "lim", "sin", "max", "ln", and so on are normally set in roman font instead of italic font. Use \lim, \sin, etc. to make these: \sin x sinx, not sin x sinx. Use subscripts to attach a notation to \lim: \lim_{x\to 0}
+limx→0
+
+There are a very large number of special symbols and notations, too many to list here; see this shorter listing, or this exhaustive listing. Some of the most common include:
+
+\lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq <>≤≤≦⩽≥≥≧⩾≠. You can use \not to put a slash through almost anything: \not\lt ≮ but it often looks bad.
+\times \div \pm \mp ×÷±∓. \cdot is a centered dot: x⋅y
+\cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing ∪∩∖⊂⊆⊊⊃∈∉∅∅
+{n+1 \choose 2k} or \binom{n+1}{2k} (n+12k)
+\to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto →→←⇒⇐↦
+\land \lor \lnot \forall \exists \top \bot \vdash \vDash ∧∨¬∀∃⊤⊥⊢⊨
+\star \ast \oplus \circ \bullet ⋆∗⊕∘∙
+\approx \sim \simeq \cong \equiv \prec \lhd \therefore ≈∼≃≅≡≺⊲∴
+\infty \aleph_0 ∞ℵ0 \nabla \partial ∇∂ \Im \Re IR
+For modular equivalence, use \pmod like this: a\equiv b\pmod n a≡b(modn).
+\ldots is the dots in a1,a2,…,an \cdots is the dots in a1+a2+⋯+an
+Some Greek letters have variant forms: \epsilon \varepsilon ϵε, \phi \varphi ϕφ, and others. Script lowercase l is \ell ℓ.
+Detexify lets you draw a symbol on a web page and then lists the TEX symbols that seem to resemble it. These are not guaranteed to work in MathJax but are a good place to start. To check that a command is supported, note that MathJax.org maintains a list of currently supported LATEX commands, and one can also check Dr. Carol JVF Burns's page of TEX Commands Available in MathJax.
+
+Spaces MathJax usually decides for itself how to space formulas, using a complex set of rules. Putting extra literal spaces into formulas will not change the amount of space MathJax puts in: a␣b and a␣␣␣␣b are both ab. To add more space, use \, for a thin space ab; \; for a wider space ab.  \quad and \qquad are large spaces: ab, ab.
+
+To set plain text, use \text{…}: {x∈s∣x is extra large}. You can nest $…$ inside of \text{…}.
+
+Accents and diacritical marks Use \hat for a single symbol x^, \widehat for a larger formula xyˆ. If you make it too wide, it will look silly. Similarly, there are \bar x¯ and \overline xyz¯¯¯¯¯¯¯¯, and \vec x⃗  and \overrightarrow xy−→ and \overleftrightarrow xy←→. For dots, as in ddxxx˙=x˙2+xx¨, use \dot and \ddot.
+
+Special characters used for MathJax interpreting can be escaped using the \ character: \$ $, \{ {, \_ _, etc. If you want \ itself, you should use \backslash ∖, because \\ is for a new line.
 </p>
 </body>
 </html>
