@@ -6,7 +6,7 @@
 using namespace std;
 
 void add_plus_plus(ifstream& in_stream, ofstream& out_stream);
-const char *slideNames[]{
+string slideNames[] = {
     "class: 1,  slide: 15 → System Bus Model",
     "class: 2,  slide: 10-12 → Converting Base 10 to Base 2",
     "class: 3,  slide: 11 → Two's Compliment Overflow",
@@ -33,7 +33,7 @@ const char *slideNames[]{
     "class: 15,  slide: 4 → Comparators",
     "class: 15,  slide: 22-23 → ROM - given a table bill in the connections",
     "class: 15,  slide: 30 → CPLD",
-    "class: 15,  slide: 32 → FPGAAdditional ",
+    "class: 15,  slide: 32 → FPGA",
     "class: 20,  slide: 4-6 → D-Type state machine logic design",
     "class: 20,  slide: 10-11 → SR Type state machine logic design (2 state)",
     "class: 21,  slide: 4 → State Reduction Principals",
@@ -48,7 +48,7 @@ const char *slideNames[]{
     "class: 23,  slide: 12 → Mealey and Moore, yet again...",
 };
 
-const char *slideNumbers[]{
+string slideNumbers[] = {
     "1_15",
     "2_10",
     "2_11",
@@ -71,7 +71,7 @@ const char *slideNumbers[]{
     "10_20",
     "10_21",
     "10_22",
-    "10_23"
+    "10_23",
     "11_9",
     "11_10",
     "11_11",
@@ -148,13 +148,27 @@ int main()
 {
     ofstream myfile;
     myfile.open ("report.html");
-    myfile << "<!-- //START -->"; //starting html
+    myfile << "<!-- //START -->\n"; //starting html
 
     //add some html content
     //as an example: if you have array of objects featuring the properties name & value, you can print out a new line for each property pairs like this:
-    for (int i=0; i < 92; i++)
-        myfile << "<a href=""images/" << *slideNumbers[i] << ".png"" target=""_blank""><img src=""images/" << *slideNumbers[i] << ".png"" alt=""" << *slideNumbers[i] << "></a>" << endl;
-    //ending html
-    myfile << "<!-- //END -->";
+    for (int i=0; i < 93; i++){
+		string s = string(slideNumbers[i]);
+        	myfile << "<a href=\"images/" << s << ".png\" target=\"_blank\"><img src=\"images/" << slideNumbers[i] << ".png\" alt=\"" << slideNumbers[i] << "></a><br \\>" << endl;
+	}
+
+    myfile << "\n<!-- //END -->";
     myfile.close();
+
+    myfile.open ("report2.html");
+    myfile << "<!-- //START -->\n"; //starting html
+
+    for (int i = 0; i < 39; i++){
+		myfile << "<br \\>" << slideNames[i] << endl;
+	}
+
+    myfile << "\n<!-- //END -->";
+    myfile.close();
+    //ending html
+
 }
