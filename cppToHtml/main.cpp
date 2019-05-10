@@ -154,7 +154,7 @@ int main()
     //as an example: if you have array of objects featuring the properties name & value, you can print out a new line for each property pairs like this:
     for (int i=0; i < 93; i++){
 		string s = string(slideNumbers[i]);
-        	myfile << "<a href=\"images/" << s << ".png\" target=\"_blank\"><img src=\"images/" << slideNumbers[i] << ".png\" alt=\"" << slideNumbers[i] << "></a><br \\>" << endl;
+        	myfile << "<a href=\"images/" << s << ".png\" target=\"_blank\"><img src=\"images/" << slideNumbers[i] << ".png\" alt=\"" << slideNumbers[i] << "\"></a>" << endl;
 	}
 
     myfile << "\n<!-- //END -->";
@@ -164,7 +164,7 @@ int main()
     myfile << "<!-- //START -->\n"; //starting html
 
     for (int i = 0; i < 39; i++){
-		myfile << "<br \\>" << slideNames[i] << endl;
+		myfile << "<br \\>" << slideNames[i] << "<br \\>" << endl;
 	}
 
     myfile << "\n<!-- //END -->";
