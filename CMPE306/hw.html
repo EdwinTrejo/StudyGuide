@@ -23,6 +23,30 @@
         a:hover {
             color: blue;
         }
+
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 
@@ -30,43 +54,97 @@
     <h1>Homeworks</h1>
     <a href="index.html">Back Home</a>
     <br />
+    <br />
+
+    <button type="button" class="collapsible">Ch3</button>
+    <div class="content">
     <object data="Homework/Ch3.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/Ch3.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">Ch4</button>
+    <div class="content">
     <object data="Homework/Ch4.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/Ch4.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_F19_HWL02_191030due191106</button>
+    <div class="content">
     <object data="Homework/CMPE306_F19_HWL02_191030due191106.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_F19_HWL02_191030due191106.pdf">to the PDF!</a>
         </p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_F19_HWL04_191119</button>
+    <div class="content">
     <object data="Homework/CMPE306_F19_HWL04_191119.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_F19_HWL04_191119.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_F19_HWL05_191125</button>
+    <div class="content">
     <object data="Homework/CMPE306_F19_HWL05_191125.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_F19_HWL05_191125.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_F9_HWL01_assigned191023due191030</button>
+    <div class="content">
     <object data="Homework/CMPE306_F9_HWL01_assigned191023due191030.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_F9_HWL01_assigned191023due191030.pdf">to the
                 PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_S17_HWL03_191106</button>
+    <div class="content">
     <object data="Homework/CMPE306_S17_HWL03_191106.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_S17_HWL03_191106.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">CMPE306_S17_HWL06_191202</button>
+    <div class="content">
     <object data="Homework/CMPE306_S17_HWL06_191202.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/CMPE306_S17_HWL06_191202.pdf">to the PDF!</a></p>
     </object>
     <br />
+</div>
+
+    <button type="button" class="collapsible">Hw2questions</button>
+    <div class="content">
     <object data="Homework/Hw2questions.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Homework/Hw2questions.pdf">to the PDF!</a></p>
     </object>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

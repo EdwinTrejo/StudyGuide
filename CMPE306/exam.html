@@ -10,7 +10,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 80%;
+            width: 100%;
             height: 800px;
         }
 
@@ -23,20 +23,69 @@
         a:hover {
             color: blue;
         }
+
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 
 <body>
     <h1>Exam_Solutions</h1>
     <a href="index.html">Back Home</a>
-    <object data="Exam_Solutions/CMPE306F19BlueExam2rev1solnsandrubric.pdf" type="application/pdf">
-        <p>Alternative text - include a link <a href="Exam_Solutions/CMPE306F19BlueExam2rev1solnsandrubric.pdf">to the
-                PDF!</a></p>
-    </object>
     <br />
+    <br />
+    <button type="button" class="collapsible">CMPE306F19BlueExam2rev1solnsandrubric</button>
+    <div class="content">
+        <object data="Exam_Solutions/CMPE306F19BlueExam2rev1solnsandrubric.pdf" type="application/pdf">
+            <p>Alternative text - include a link <a href="Exam_Solutions/CMPE306F19BlueExam2rev1solnsandrubric.pdf">to the PDF!</a></p>
+        </object>
+    </div>
+    <br />
+
+    <button type="button" class="collapsible">F19NotesExam2</button>
+    <div class="content">
     <object data="Exam_Solutions/F19NotesExam2.pdf" type="application/pdf">
         <p>Alternative text - include a link <a href="Exam_Solutions/F19NotesExam2.pdf">to the PDF!</a></p>
     </object>
-</body>
+</div>
 
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+
+</body>
 </html>
